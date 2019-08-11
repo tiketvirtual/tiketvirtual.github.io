@@ -121,8 +121,6 @@ THE SOFTWARE.
 
 @angular/material/button
 
-@angular/material/card
-
 @angular/material/core
 
 @angular/material/dialog
@@ -153,6 +151,9 @@ THE SOFTWARE.
 MIT
 
 @angular/router
+MIT
+
+@angular/service-worker
 MIT
 
 @firebase/app
