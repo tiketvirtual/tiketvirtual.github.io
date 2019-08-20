@@ -1,3 +1,4 @@
+
 // Give the service worker access to Firebase Messaging.
 // Note that you can only use Firebase Messaging here, other Firebase libraries
 // are not available in the service worker.
@@ -18,3 +19,23 @@ firebase.initializeApp({
 // Retrieve an instance of Firebase Messaging so that it can handle background
 // messages.
 const messaging = firebase.messaging();
+
+messaging.setBackgroundMessageHandler(payload => {
+  const jTurn = payload['data']['data'];
+  const aTurn = JSON.parse(jTurn);
+  const title = aTurn.server_title;
+  const options = {
+    body: aTurn.status_string || '...',
+    // icon: payload.data.icon,
+    // image: payload.data.image,
+  }
+
+  clients.matchAll({includeUncontrolled: true, type: 'window'}).then(clients => {
+    clients.forEach(client => {
+      client.postMessage({'cmd': 'turn','data': jTurn});
+    })
+  });
+
+  return self.registration.showNotification(title, options);
+  // var myNotification = new Notification(title, options);
+});
