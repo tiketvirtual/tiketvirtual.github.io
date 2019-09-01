@@ -1,4 +1,4 @@
-/*
+
 const CACHE_APPSHELL_NAME = 'tiket-v004';
 const CACHE_RUNTIME = 'runtime';
 const CACHE_LOGO = 'tiket-logo';
@@ -59,4 +59,3 @@ self.addEventListener('fetch', e => {
   }
 });
 
-*/
