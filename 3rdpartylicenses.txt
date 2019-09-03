@@ -311,6 +311,9 @@ THE SOFTWARE.
 jspdf
 MIT
 
+ngx-image-cropper
+MIT
+
 qrcodejs2
 MIT
 The MIT License (MIT)
