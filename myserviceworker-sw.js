@@ -39,7 +39,7 @@ self.addEventListener('activate', event => {
 // Cache any new resources as they are fetched
 self.addEventListener('fetch', e => {
   // Skip cross-origin requests, like those for Google Analytics.
-  if (e.request.url.startsWith(self.location.origin)) {
+  if (e.request.url.startsWith(self.location.who)) {
     e.respondWith(
       caches.match(e.request).then(cachedResponse => {
         if (cachedResponse) {
